@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "img": "/menu-images/01.jpg",
+    "title": "Americano Coffee",
+    "description": "Milk with vanilla flavored",
+    "price": 50.25
+  },
+  {
+    "id": 2,
+    "img": "/menu-images/02.jpg",
+    "title": "Cappuccino Arabica",
+    "description": "Milk with vanilla flavored",
+    "price": 70.25
+  },
+  {
+    "id": 3,
+    "img": "/menu-images/03.jpg",
+    "title": "Milk Cream Coffee",
+    "description": "Milk with vanilla flavored",
+    "price": 30.25
+  },
+  {
+    "id": 4,
+    "img": "/menu-images/04.jpg",
+    "title": "Special Raw Coffee",
+    "description": "Milk with vanilla flavored",
+    "price": 80.25
+  },
+  {
+    "id": 5,
+    "img": "/menu-images/05.jpg",
+    "title": "Fresh Black Coffee",
+    "description": "Milk with vanilla flavored",
+    "price": 90.25
+  },
+  {
+    "id": 6,
+    "img": "/menu-images/06.jpg",
+    "title": "Cappuccino Arabica",
+    "description": "Milk with vanilla flavored",
+    "price": 70.25
+  },
+  {
+    "id": 7,
+    "img": "/menu-images/07.jpg",
+    "title": "Milk Cream Coffee",
+    "description": "Milk with vanilla flavored",
+    "price": 120.25
+  },
+  {
+    "id": 8,
+    "img": "/menu-images/08.jpg",
+    "title": "Cold Coffee",
+    "description": "Milk with vanilla flavored",
+    "price": 40.25
+  }
+]

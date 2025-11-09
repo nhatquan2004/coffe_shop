@@ -1,0 +1,57 @@
+.chef-card {
+  border-bottom: 2px solid var(--primary-color);
+  transition: 0.5s var(--transition);
+}
+.chef-card:hover {
+  transform: translateY(-10px);
+}
+.chef-card .chef-img {
+  position: relative;
+}
+.chef-card .chef-img .socials {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: 0;
+  right: -10px;
+  margin-right: 10px;
+  opacity: 0;
+  transition: 0.5s var(--transition);
+}
+.chef-card:hover .socials {
+  opacity: 1;
+  right: 0;
+}
+.chef-card .chef-img .socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+  color: var(--title-color);
+  background-color: var(--container-color);
+  border-radius: 50%;
+}
+.chef-card .chef-img .socials a:hover {
+  background-color: var(--primary-color);
+}
+.chef-card .info {
+  padding: 1rem 0;
+  background-color: var(--container-color);
+  text-align: center;
+}
+.chef-card .info p {
+  margin-bottom: 0;
+}
+.chef-card .info .chef-name {
+  font-family: var(--second-font);
+  font-size: var(--larger-font-size);
+  color: var(--title-color);
+}
+.chef-card .info .chef-level {
+  color: var(--primary-color);
+  opacity: 0.8;
+}

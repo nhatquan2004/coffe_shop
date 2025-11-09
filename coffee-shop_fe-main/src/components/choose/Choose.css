@@ -1,0 +1,33 @@
+.choose-section {
+  background-color: var(--bg-color);
+}
+.choose-section h2 {
+  font-size: var(--big-font-size);
+  margin: 1rem 0;
+}
+.choose-section p {
+  margin-bottom: 2rem;
+}
+.choose-section .choose-box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.choose-section .choose-box img {
+  width: 50px;
+  height: 50px;
+  padding: 8px;
+  border-radius: 50%;
+  border: 2px dashed var(--primary-color);
+}
+.choose-section .choose-box .choose-content h3 {
+  color: var(--title-color);
+  font-size: var(--larger-font-size);
+}
+.choose-section .choose-box .choose-content p {
+  margin-bottom: 0;
+  font-size: 0.85rem;
+}

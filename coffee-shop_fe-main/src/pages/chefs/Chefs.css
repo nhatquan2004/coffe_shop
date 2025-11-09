@@ -1,0 +1,22 @@
+.chefs-section {
+  background-color: var(--bg-color);
+}
+.chefs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .chefs {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .chefs {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+  }
+}

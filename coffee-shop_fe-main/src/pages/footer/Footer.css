@@ -1,0 +1,286 @@
+/* ===== FOOTER SECTION ===== */
+.footer-section {
+  background-color: var(--container-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-section .footer-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1.25rem;
+}
+
+/* ===== FOOTER LOGO - TEXT VERSION ===== */
+.footer-logo {
+  font-size: 48px; /* ✅ TO - GIỐNG CÁI CŨ */
+  font-weight: 700;
+  color: var(--title-color);
+  margin-bottom: 2rem;
+  padding: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  display: inline-block;
+  letter-spacing: 1px;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+}
+
+/* ===== FOOTER DESCRIPTION ===== */
+.footer-description {
+  margin-bottom: 1.25rem;
+  color: var(--text-color);
+}
+
+/* ===== FOOTER INFO ===== */
+.footer-info {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-info li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+  font-size: var(--normal-font-size);
+}
+
+/* ===== CENTER SECTION (Quick Links + Hours) ===== */
+.center {
+  display: flex;
+  gap: 2rem;
+}
+
+.center h3,
+.newsletter h3 {
+  position: relative;
+  font-size: var(--largest-font-size);
+  padding-bottom: 1.25rem;
+  color: #D4A574; /* ✅ BEIGE COLOR - THAY CHỮ HEADING */
+  margin-bottom: 1.5rem;
+}
+
+/* ✅ UNDERLINE DECORATION */
+.center h3::before,
+.newsletter h3::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+}
+
+.center h3::after,
+.newsletter h3::after {
+  position: absolute;
+  content: "";
+  width: 35px;
+  height: 2px;
+  bottom: 0;
+  left: 15px;
+  background-color: var(--primary-color);
+}
+
+/* ===== QUICK LINKS ===== */
+.quick-link {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.5rem;
+}
+
+.footer-links li {
+  margin-bottom: 1.25rem;
+  transition: 0.35s ease;
+}
+
+.footer-links li span {
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-links li:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== OPENING HOURS ===== */
+.opening-hours {
+  flex: 1;
+}
+
+.schedule {
+  list-style: none;
+  padding: 1rem;
+  border: 2px dashed var(--primary-color);
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.schedule li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+
+.schedule li:last-child {
+  margin-bottom: 0;
+}
+
+.day {
+  font-weight: 600;
+  color: var(--title-color);
+}
+
+.time {
+  color: var(--text-color);
+}
+
+/* ===== NEWSLETTER SECTION ===== */
+.newsletter {
+  flex: 1;
+}
+
+.newsletter-content {
+  margin-top: 1.5rem;
+}
+
+.newsletter-content p {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  font-size: var(--normal-font-size);
+}
+
+/* ===== NEWSLETTER INPUT ===== */
+.newsletter-content input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--title-color);
+  background-color: transparent;
+  color: var(--title-color);
+  border-radius: 8px;
+  outline: none;
+  font-family: var(--font-family-base);
+  transition: 0.3s ease;
+}
+
+.newsletter-content input::placeholder {
+  color: rgba(var(--title-color), 0.6);
+}
+
+.newsletter-content input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(var(--primary-color), 0.3);
+}
+
+/* ===== NEWSLETTER BUTTON ===== */
+.newsletter-content button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* ===== FOLLOW US SECTION ===== */
+.follow-section {
+  margin-top: 1.5rem;
+}
+
+.follow-title {
+  font-size: var(--normal-font-size);
+  font-weight: 600;
+  color: var(--title-color);
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.social-links li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  color: var(--title-color);
+  transition: 0.3s ease;
+  font-size: 1rem;
+}
+
+.social-links li a:hover {
+  background-color: var(--primary-color);
+  color: var(--title-color);
+}
+
+/* ===== TABLET RESPONSIVE ===== */
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .footer-section .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .center {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .quick-link {
+    padding-right: 0;
+  }
+
+  .footer-logo {
+    font-size: 36px;
+  }
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media screen and (max-width: 767px) {
+  .footer-section .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .center {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .quick-link,
+  .opening-hours,
+  .newsletter {
+    padding-right: 0;
+  }
+
+  .footer-logo {
+    font-size: 28px;
+    padding: 15px;
+  }
+
+  .center h3,
+  .newsletter h3 {
+    font-size: var(--large-font-size);
+  }
+}

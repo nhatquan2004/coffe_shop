@@ -1,0 +1,33 @@
+.home-section {
+    min-height: calc(100vh + var(--header-height));
+    background-image: url(./../../assets/images/home-bg.png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+.home-content {
+    color: var(--title-color);
+}
+.home-content h2 {
+   text-transform: capitalize;
+   font-size: var(--h1-font-size);
+}
+.home-content h1 {
+    text-transform: capitalize;
+    font-size: var(--bigger-font-size);
+    font-weight: 600;
+    margin-block: 1.25rem;
+}
+.home-content p {
+    font-weight: 300;
+    margin-bottom: 1.25rem;
+}
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+.buttons a{
+    display: block;
+    color: var(--title-color);
+}

@@ -1,0 +1,15 @@
+.footer-text {
+    width: 100%;
+    padding: 2rem;
+    border-top: 2px dashed var(--primary-color) ;
+    background-color: var(--container-color);
+}
+.footer-text p {
+   display: flex;
+   align-items: center;
+   justify-content: center; 
+}
+.footer-text .highlight{
+    color: var(--primary-color);
+    margin: 0 3px;
+}

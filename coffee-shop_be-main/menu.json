@@ -1,0 +1,122 @@
+[
+  {
+    "_id": {
+      "$oid": "67222e0a0e0f1b2a3c4d5e6f"
+    },
+    "title": "Americano Coffee",
+    "description": "Milk with vanilla flavored",
+    "price": 50.25,
+    "img": "/images/Americano.jpg",
+    "createdAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67222e0a0e0f1b2a3c4d5e70"
+    },
+    "title": "Cappuccino Arabica",
+    "description": "Milk with vanilla flavored",
+    "price": 70.25,
+    "img": "/images/Cappuccino Arabica.jpg",
+    "createdAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67222e0a0e0f1b2a3c4d5e71"
+    },
+    "title": "coldcoffee",
+    "description": "Milk with vanilla flavored",
+    "price": 45.50,
+    "img": "/images/coldcoffee.jpg",
+    "createdAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67222e0a0e0f1b2a3c4d5e72"
+    },
+    "title": "Fresh Black Coffee",
+    "description": "Milk with vanilla flavored",
+    "price": 90.25,
+    "img": "/images/FreshBlackCoffee.jpg",
+    "createdAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67222e0a0e0f1b2a3c4d5e73"
+    },
+    "title": "Iced Mocha Coffee",
+    "description": "Milk with vanilla flavored",
+    "price": 40.25,
+    "img": "/images/Iced-mocha-1.jpg",
+    "createdAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67222e0a0e0f1b2a3c4d5e74"
+    },
+    "title": "Latte Coffee",
+    "description": "Milk with vanilla flavored",
+    "price": 55.00,
+    "img": "/images/latte.jpg",
+    "createdAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67222e0a0e0f1b2a3c4d5e75"
+    },
+    "title": "Milk Cream Coffee",
+    "description": "Milk with vanilla flavored",
+    "price": 30.25,
+    "img": "/images/Milk Cream Coffee.jpg",
+    "createdAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "67222e0a0e0f1b2a3c4d5e76"
+    },
+    "title": "Milk Coffee",
+    "description": "Milk with vanilla flavored",
+    "price": 80.25,
+    "img": "/images/milkcaffe.jpg",
+    "createdAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    },
+    "updatedAt": {
+      "$date": "2025-10-31T13:55:00.000Z"
+    }
+  }
+]

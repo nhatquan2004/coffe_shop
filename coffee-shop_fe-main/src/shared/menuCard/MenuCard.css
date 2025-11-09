@@ -1,0 +1,92 @@
+.menu-card {
+  background-color: var(--container-color);
+  margin-bottom: 1.25rem;
+  border-radius: var(--radius);
+  padding: 1rem;
+  transition: 0.5s var(--transition);
+}
+
+.menu-card a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.menu-card:hover {
+  transform: translateY(-0.5rem);
+}
+
+/* Image Container */
+.menu-img-container {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px dashed var(--primary-color);
+  border-radius: 50%;
+  display: block;
+}
+
+/* Fallback Image */
+.menu-img-fallback {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed var(--primary-color);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a0826d, #8b7355);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  word-break: break-word;
+}
+
+/* Data Section */
+.menu-data {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.menu-text {
+  flex: 1;
+}
+
+.menu-title,
+.menu-price {
+  color: var(--primary-color);
+}
+
+.menu-title {
+  font-size: var(--large-font-size);
+  margin: 0 0 0.25rem 0;
+}
+
+.menu-description {
+  color: var(--text-color);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.menu-price {
+  font-size: var(--larger-font-size);
+  border-left: 2px dashed var(--primary-color);
+  padding-left: 1rem;
+  white-space: nowrap;
+  margin-left: auto;
+}
