@@ -33,6 +33,7 @@ const AuthProvider = ({ children }) => {
             const userData = {
               ...response.data,
               role, // ensure ALWAYS included!
+               name: role === "admin" ? "MoodOn Coffee" : response.data.name,
             };
             setUser(userData);
             localStorage.setItem("user", JSON.stringify(userData));
@@ -114,9 +115,9 @@ const AuthProvider = ({ children }) => {
   const quickLogin = (email = "admin@coffee.com", role = "admin") => {
     const testUser = {
       id: "test_" + Math.random().toString(36).substr(2, 9),
-      name: role === "admin" ? "Admin" : "User",
+      name: role === "admin" ? "MoodOn Coffee" : "User",
       email,
-      avatar: `https://ui-avatars.com/api/?name=${role === "admin" ? "Admin" : "User"}`,
+      avatar: `https://ui-avatars.com/api/?name=${role === "admin" ? "MoodOn Coffee" : "User"}`,
       role,
     };
     localStorage.setItem("user", JSON.stringify(testUser));

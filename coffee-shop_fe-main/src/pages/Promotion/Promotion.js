@@ -70,7 +70,7 @@ const Promotion = () => {
         id: Date.now(),
         author: {
           id: user?.id || `user_${Date.now()}`,
-          name: user?.name || "Admin",
+          name: "MoodOn Coffee",
           avatar: getFixedAvatar({ role: "admin" }),
           role: "admin",
         },

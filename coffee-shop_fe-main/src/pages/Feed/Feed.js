@@ -415,12 +415,15 @@ const Feed = () => {
                   className="avatar"
                 />
                 <div className="author-info">
-                  <h4 className="author-name">
-                    {post.author.name}
-                    {post.author.role === "admin" && (
-                      <span className="verified-badge">✓</span>
-                    )}
-                  </h4>
+                 <h4 className="author-name">
+  {post.author.role === "admin" 
+    ? "MoodOnc Coffee"  // Thay bằng tên shop bạn muốn
+    : post.author.name} 
+  {post.author.role === "admin" && (
+    <span className="verified-badge">✓</span>
+  )}
+</h4>
+
                   <span className="post-time">
                     {new Date(post.timestamp).toLocaleString("vi-VN")}
                   </span>

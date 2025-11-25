@@ -11,9 +11,10 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/home/Home";
 import Menu from "./pages/menu/Menu";
 import Gallery from "./pages/gallery/Gallery";
-import Feed from "./pages/Feed/Feed"; // ✅ FEED
-import Promotion from "./pages/Promotion/Promotion"; // ✅ ADD PROMOTION IMPORT
+import Feed from "./pages/Feed/Feed";
+import Promotion from "./pages/Promotion/Promotion";
 import Reservation from "./components/reservation/Reservation";
+import AdminReservation from "./pages/AdminReservation/AdminReservation";
 import MenuDetail from "./pages/menuDetail/MenuDetail";
 import PayMent from "./components/payment/PayMent";
 import Login from "./pages/Login";
@@ -25,104 +26,134 @@ import AdminMenu from "./pages/AdminMenu/AdminMenu";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
+// Layout component with Header/Footer
+function MainLayout({ children }) {
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  );
+}
+
 function App() {
   return (
     <AuthProvider>
-      <div className="App">
-        <Routes>
-          {/* ===========================
-              PUBLIC ROUTES - No Header/Footer
-              =========================== */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+      <Routes>
+        {/* LOGIN & REGISTER - No Layout */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
-          {/* ===========================
-              ALL OTHER ROUTES - With Header/Footer
-              =========================== */}
-          <Route
-            path="/*"
-            element={
-              <>
-                <Header />
-                <Routes>
-                  {/* HOME & PUBLIC PAGES */}
-                  <Route path="/" element={<Navigate to="/home" replace />} />
-                  <Route path="/home" element={<Home />} />
-
-                  {/* MENU ROUTES */}
-                  <Route path="/menu" element={<Menu />} />
-                  <Route path="/menu/:id" element={<MenuDetail />} />
-
-                  {/* GALLERY */}
-                  <Route path="/gallery" element={<Gallery />} />
-
-                  {/* ✅ FEED ROUTE - Social Media Feed (Public) */}
-                  <Route path="/feed" element={<Feed />} />
-
-                  {/* ✅ PROMOTION ROUTE - Admin Promotions (Public) */}
-                  <Route path="/promotion" element={<Promotion />} />
-
-                  {/* PROTECTED ROUTES - Requires Authentication */}
-                  <Route
-                    path="/reservation"
-                    element={
-                      <ProtectedRoute>
-                        <Reservation />
-                      </ProtectedRoute>
-                    }
-                  />
-
-                  <Route
-                    path="/checkout"
-                    element={
-                      <ProtectedRoute>
-                        <PayMent />
-                      </ProtectedRoute>
-                    }
-                  />
-
-                  <Route
-                    path="/profile"
-                    element={
-                      <ProtectedRoute>
-                        <Profile />
-                      </ProtectedRoute>
-                    }
-                  />
-
-                  {/* ADMIN ROUTES - Requires Authentication */}
-                  <Route
-                    path="admin/menu"
-                    element={
-                      <ProtectedRoute>
-                        <AdminMenu />
-                      </ProtectedRoute>
-                    }
-                  />
-
-                  {/* 404 FALLBACK */}
-                  <Route path="*" element={<Navigate to="/home" replace />} />
-                </Routes>
-                <Footer />
-              </>
-            }
-          />
-        </Routes>
-
-        {/* Toast Notifications */}
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
+        {/* ALL OTHER PAGES - With Header/Footer Layout */}
+        <Route
+          path="/"
+          element={
+            <MainLayout>
+              <Home />
+            </MainLayout>
+          }
         />
-      </div>
+        <Route
+          path="/menu"
+          element={
+            <MainLayout>
+              <Menu />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/menu/:id"
+          element={
+            <MainLayout>
+              <MenuDetail />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/gallery"
+          element={
+            <MainLayout>
+              <Gallery />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/feed"
+          element={
+            <MainLayout>
+              <Feed />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/promotion"
+          element={
+            <MainLayout>
+              <Promotion />
+            </MainLayout>
+          }
+        />
+
+        {/* PROTECTED ROUTES */}
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <MainLayout>
+                <Profile />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/reservation"
+          element={
+            <ProtectedRoute>
+              <MainLayout>
+                <Reservation />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/payment"
+          element={
+            <ProtectedRoute>
+              <MainLayout>
+                <PayMent />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+
+        {/* ADMIN ROUTES */}
+        <Route
+          path="/admin/menu"
+          element={
+            <ProtectedRoute>
+              <MainLayout>
+                <AdminMenu />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/reservation"
+          element={
+            <ProtectedRoute>
+              <MainLayout>
+                <AdminReservation />
+              </MainLayout>
+            </ProtectedRoute>
+          }
+        />
+
+        {/* 404 FALLBACK */}
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+
+      <ToastContainer />
     </AuthProvider>
   );
 }
