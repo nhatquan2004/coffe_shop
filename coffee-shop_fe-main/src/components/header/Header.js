@@ -10,6 +10,7 @@ import {
   Gift,
 } from "lucide-react";
 import { useAuth } from "../../contexts/AuthContext";
+import { BASE_URL } from "../../utils/config";
 import "./Header.css";
 
 // Coffee Logo Component

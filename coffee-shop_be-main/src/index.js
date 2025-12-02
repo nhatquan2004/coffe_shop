@@ -9,15 +9,16 @@ import fs from "fs";
 import multer from "multer";
 
 // ========================================
-// IMPORT ALL ROUTES - ✅ FIXED FILE NAMES
+// IMPORT ALL ROUTES
 // ========================================
 import menuRoutes from "./routes/menu.js";
 import tableRoutes from "./routes/table.js";
 import authRoutes from "./routes/auth.js";
 import feedRoutes from "./routes/feed.js";
-import promotionRoutes from "./routes/promotionRoutes.js"; // ✅ FIXED
+import promotionRoutes from "./routes/promotionRoutes.js";
 
 dotenv.config();
+
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -43,14 +44,29 @@ const connectDB = async () => {
 };
 
 // ===========================
-// CORS Middleware
+// 🔴 [SỬA CORS] - CHO RAILWAY & VERCEL
 // ===========================
+// 📝 COMMENT:
+// - Thêm URL Railway Backend (lấy từ Railway Deploy)
+// - Thêm URL Vercel Frontend (lấy từ Vercel Deploy)
+// - Giữ localhost cho dev local
+// - Bây giờ thêm placeholder, bạn sẽ update URL thực sau deploy
+// ===========================
+
 const corsOptions = {
+  // ✅ THÊM URL CỦA RAILWAY & VERCEL VÀO ĐÂY
   origin: [
+    // 🟢 DEV LOCAL
     "http://localhost:3000",
     "http://localhost:3001",
     "http://localhost:5000",
+    
+    // 🔵 PRODUCTION - THAY BẰNG URL THỰC CỦA BẠN
+    // ❗ SỬA: Lấy URL Railway và Vercel sau deploy, update vào đây
+    "https://coffee-shop-fe-main.vercel.app",      // 📝 URL Frontend từ Vercel
+    "https://coffee-shop-be-main.railway.app",     // 📝 URL Backend từ Railway
   ],
+  
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -139,14 +155,12 @@ app.post("/api/upload", upload.single("image"), (req, res) => {
     }
 
     const filePath = `/images/${req.file.filename}`;
-
     res.status(200).json({
       success: true,
       filePath,
       message: `✅ Upload thành công: ${req.file.filename}`,
       filename: req.file.filename,
     });
-
     console.log(`✅ File uploaded: ${filePath}`);
   } catch (error) {
     console.error("❌ Upload error:", error);
@@ -173,11 +187,11 @@ app.use("/api/reservation", tableRoutes);
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/auth", authRoutes);
 
-// ✅ FEED ROUTES (Social Media Feed)
+// Feed Routes (Social Media Feed)
 app.use("/api/feed", feedRoutes);
 app.use("/api/v1/feed", feedRoutes);
 
-// ✅ PROMOTION ROUTES (Admin Promotions)
+// Promotion Routes (Admin Promotions)
 app.use("/api/promotion", promotionRoutes);
 app.use("/api/v1/promotion", promotionRoutes);
 
@@ -189,6 +203,7 @@ app.get("/", (req, res) => {
     success: true,
     message: "☕ Coffee Shop API is running!",
     timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || "development",
     features: {
       upload: "/api/upload",
       staticFiles: "/images/*",
@@ -283,11 +298,10 @@ app.use((err, req, res, next) => {
 const startServer = async () => {
   try {
     await connectDB();
-
     app.listen(port, () => {
       console.log("\n🚀 Coffee Shop Server Started!");
       console.log(`📍 Port: ${port}`);
-      console.log(`🌐 CORS: Enabled for localhost:3000, 3001, 5000`);
+      console.log(`🌐 CORS: Enabled for localhost & Railway/Vercel`);
       console.log(`📂 Static Files: Serving from /public folder`);
       console.log(`📤 Upload Endpoint: POST /api/upload`);
       console.log(`📸 Images Folder: /public/images`);
